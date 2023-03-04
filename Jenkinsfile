@@ -191,4 +191,28 @@ node{
    catch (err){
       echo "Wireguard-UI Parameter fail"
    }
+ try{
+      stage('audiobookshelf') 
+{
+  build job: 'update-docker-app', parameters: 
+      [
+      string(name: 'dockerapp', value: 'audiobookshelf')
+      ]
+}
+ }    
+   catch (err){
+      echo "Audiobookshelf Parameter fail"
+   }
+ try{
+      stage('musicbot') 
+{
+  build job: 'update-docker-app', parameters: 
+      [
+      string(name: 'dockerapp', value: 'musicbot')
+      ]
+}
+ }    
+   catch (err){
+      echo "Musicbot Parameter fail"
+   }
 }
