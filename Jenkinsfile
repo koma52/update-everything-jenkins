@@ -48,18 +48,6 @@ node{
       echo "Diun Parameter fail"
    }
  try{
-      stage('duckdns') 
-{
-  build job: 'update-docker-app', parameters: 
-      [
-      string(name: 'dockerapp', value: 'duckdns')
-      ]
-}
- }    
-   catch (err){
-      echo "DuckDNS Parameter fail"
-   }
- try{
       stage('heimdall') 
 {
   build job: 'update-docker-app', parameters: 
