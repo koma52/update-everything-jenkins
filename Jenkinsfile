@@ -96,18 +96,6 @@ node{
       echo "NC-Database Parameter fail"
    }
  try{
-      stage('nextcloud') 
-{
-  build job: 'update-docker-app', parameters: 
-      [
-      string(name: 'dockerapp', value: 'nextcloud')
-      ]
-}
- }    
-   catch (err){
-      echo "NextCloud Parameter fail"
-   }
- try{
       stage('phpmyadmin') 
 {
   build job: 'update-docker-app', parameters: 
